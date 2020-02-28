@@ -4,7 +4,7 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
-const app = express ();
+const app = express();
 const db = mongoose.connection;
 //___________________
 //Port
@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 //Database
 //___________________
 // How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ohmycrud';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/recipes';
 
 // Connect to Mongo
 mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true, useUnifiedTopology: true });
@@ -43,14 +43,19 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+//___________________
+// Controllers
+// __________________
+const recipeController = require('./controllers/recipe_controller.js')
+app.use('/recipes', recipeController)
 
 //___________________
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
-});
+// app.get('/' , (req, res) => {
+//   res.send('Hello World!');
+// });
 
 //___________________
 //Listener

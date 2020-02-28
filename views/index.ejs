@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+    <title>My Recipes</title>
+  </head>
+  <body>
+    <h1>My Recipes</h1>
+    <% for(let i = 0; i < recipes.length; i++) {%>
+      <div class="index-card">
+        <a href=""><img src="<%= recipes[i].img%>" alt="food img"></a>
+        <h2><%= recipes[i].name%></h2>
+      </div>
+
+
+  <%}%>
+  </body>
+</html>

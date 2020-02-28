@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Recipe</title>
+  </head>
+  <body>
+    <form action="/recipes" method="post">
+      <!-- name -->
+      <label for="name">NAME:</label><br/>
+      <input type="text" name="name" placeholder="Pasta Bake"><br/>
+      <!-- ingredients -->
+      <label for="ingredients">INGREDIENTS:</label><br/>
+      <textarea name="ingredients" rows="8" cols="80" placeholder="60g pasta, 30g sauce, 20g parmesan,"></textarea><br/>
+      <!-- instructions -->
+      <label for="instructions">INSTRUCTIONS:</label><br/>
+      <textarea name="instructions" rows="8" cols="80" placeholder="separate the main steps with a + eg boil water and add pasta + chop ingredients for sauce and put on heat + grate cheese on top and put in the over for 0.5 of an hour + when golden brown remove and serve"></textarea><br/>
+      <!-- img -->
+      <label for="img">IMAGE URL:</label><br/>
+      <input type="text" name="img"><br/>
+      <!-- serves -->
+      <label for="servings"></label>SERVINGS:<br/>
+      <input type="number" name="servings" placeholder="2"><br/>
+      <input type="submit" name="" value="Create Recipe">
+    </form>
+  </body>
+</html>
