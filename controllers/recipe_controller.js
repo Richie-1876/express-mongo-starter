@@ -31,8 +31,13 @@ recipes.get('/new', (req,res) => {
 
 
 /////////////////////////// SHOW ROUTE //////////////////////////////
-
-
+recipes.get('/:id', (req,res) => {
+  Recipe.findById(req.params.id, (err, foundRecipe) => {
+    res.render('show.ejs', {
+      recipe: foundRecipe
+    })
+  })
+})
 /////////////////////////// EDIT ROUTE /////////////////////////////
 
 

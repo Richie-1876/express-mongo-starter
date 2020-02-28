@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Recipes | <%= recipe.name%></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image">
+        <img src="<%= recipe.img%>" alt="">
+      </div>
+      <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+          <% for (let i = 0; i < recipe.ingredients.length; i++) {%>
+            <li><%=recipe.ingredients[i]%></li>
+          <%}%>
+        </ul>
+      </div>
+    </div>
+      <div class="instructions">
+        <h2>Instructions</h2>
+        <ol>
+          <% for (let i = 0; i < recipe.instructions.length; i++) {%>
+            <li><%=recipe.instructions[i]%></li>
+
+
+          <%}%>
+        </ol>
+
+      </div>
+
+
+  </body>
+</html>

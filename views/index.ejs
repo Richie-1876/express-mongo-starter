@@ -9,7 +9,7 @@
     <h1>My Recipes</h1>
     <% for(let i = 0; i < recipes.length; i++) {%>
       <div class="index-card">
-        <a href=""><img src="<%= recipes[i].img%>" alt="food img"></a>
+        <a href="/recipes/<%=recipes[i].id%>"><img src="<%= recipes[i].img%>" alt="food img"></a>
         <h2><%= recipes[i].name%></h2>
       </div>
 
