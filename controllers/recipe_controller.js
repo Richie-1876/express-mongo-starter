@@ -39,7 +39,14 @@ recipes.get('/:id', (req,res) => {
   })
 })
 /////////////////////////// EDIT ROUTE /////////////////////////////
-
+recipes.get('/:id/edit', (req,res) => {
+  console.log(req.body);
+  Recipe.findById(req.params.id, (err, foundRecipe) => {
+    res.render('edit.ejs', {
+      recipe: foundRecipe
+    })
+  })
+})
 
 /*
 ====================================================================
@@ -54,7 +61,7 @@ recipes.post('/', (req,res) => {
   let instructions = req.body.instructions.split('+')
   req.body.instructions = instructions
 Recipe.create(req.body, (err, createdRecipe) => {
-  console.log(createdRecipe)
+  res.redirect('/recipes')
 
 })
 
@@ -63,9 +70,22 @@ Recipe.create(req.body, (err, createdRecipe) => {
 
 
 /////////////////////////// UPDATE ROUTE /////////////////////////////
-
+recipes.put('/:id', (req,res) => {
+  let ingredients = req.body.ingredients.split(',')
+  req.body.ingredients = ingredients
+  let instructions = req.body.instructions.split('+')
+  req.body.instructions = instructions
+  Recipe.findByIdAndUpdate(req.params.id, req.body, (err, updatedRecipe) => {
+    res.redirect('/recipes')
+  })
+})
 
 
 //////////////////////////// DELETE ROUTE ////////////////////////////
+recipes.delete('/:id', (req, res) => {
+  Recipe.findByIdAndRemove(req.params.id, (err, deletedRecipe) => {
+    res.redirect('/recipes')
+  })
+})
 
 module.exports = recipes
