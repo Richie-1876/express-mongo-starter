@@ -14,7 +14,9 @@
       <textarea name="ingredients" rows="8" cols="80" ><%=recipe.ingredients%></textarea><br/>
       <!-- instructions -->
       <label for="instructions">INSTRUCTIONS:</label><br/>
-      <textarea name="instructions" rows="8" cols="80" ><%=recipe.instructions%></textarea><br/>
+      <textarea name="instructions" rows="8" cols="80"
+
+       ><%=recipe.instructions.join('+')%></textarea><br/>
       <!-- img -->
       <label for="img">IMAGE URL:</label><br/>
       <input type="text" name="img"value="<%=recipe.img%>"><br/>
