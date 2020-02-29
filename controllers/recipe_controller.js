@@ -9,12 +9,20 @@ const recipes = express.Router()
                       PRESENTATION ROUTES
 ====================================================================
 */
+const isAuthenticated = (req,res,next) => {
+  if(req.session.currentUser) {
+    next()
+  } else {
+    res.redirect('/sessions/new')
+  }
+}
 //////////////////////// INDEX ROUTE ////////////////////////////////
 
 recipes.get('/', (req,res) => {
   Recipe.find({}, (err, allRecipes) => {
-    res.render('index.ejs', {
-      recipes: allRecipes
+    res.render('recipes/index.ejs', {
+      recipes: allRecipes,
+      currentUser: req.session.currentUser
     })
   })
 
@@ -23,8 +31,10 @@ recipes.get('/', (req,res) => {
 
 ////////////////////////// NEW ROUTE ////////////////////////////////
 
-recipes.get('/new', (req,res) => {
-  res.render('new.ejs')
+recipes.get('/new', isAuthenticated, (req,res) => {
+  res.render('recipes/new.ejs', {
+    currentUser: req.session.currentUser
+  })
 })
 
 ////////////////////////// SEED ROUTE ///////////////////////////////
@@ -33,17 +43,19 @@ recipes.get('/new', (req,res) => {
 /////////////////////////// SHOW ROUTE //////////////////////////////
 recipes.get('/:id', (req,res) => {
   Recipe.findById(req.params.id, (err, foundRecipe) => {
-    res.render('show.ejs', {
-      recipe: foundRecipe
+    res.render('recipes/show.ejs', {
+      recipe: foundRecipe,
+      currentUser: req.session.currentUser
     })
   })
 })
 /////////////////////////// EDIT ROUTE /////////////////////////////
-recipes.get('/:id/edit', (req,res) => {
+recipes.get('/:id/edit', isAuthenticated, (req,res) => {
   console.log(req.body);
   Recipe.findById(req.params.id, (err, foundRecipe) => {
-    res.render('edit.ejs', {
-      recipe: foundRecipe
+    res.render('recipes/edit.ejs', {
+      recipe: foundRecipe,
+      currentUser: req.session.currentUser
     })
   })
 })
@@ -55,7 +67,7 @@ recipes.get('/:id/edit', (req,res) => {
 */
 
 /////////////////////// CREATE ROUTE //////////////////////////////////
-recipes.post('/', (req,res) => {
+recipes.post('/', isAuthenticated, (req,res) => {
   let ingredients = req.body.ingredients.split(',')
   req.body.ingredients = ingredients
   let instructions = req.body.instructions.split('+')
@@ -70,7 +82,7 @@ Recipe.create(req.body, (err, createdRecipe) => {
 
 
 /////////////////////////// UPDATE ROUTE /////////////////////////////
-recipes.put('/:id', (req,res) => {
+recipes.put('/:id', isAuthenticated, (req,res) => {
   let ingredients = req.body.ingredients.split(',')
   req.body.ingredients = ingredients
   let instructions = req.body.instructions.split('+')
@@ -82,7 +94,7 @@ recipes.put('/:id', (req,res) => {
 
 
 //////////////////////////// DELETE ROUTE ////////////////////////////
-recipes.delete('/:id', (req, res) => {
+recipes.delete('/:id', isAuthenticated, (req, res) => {
   Recipe.findByIdAndRemove(req.params.id, (err, deletedRecipe) => {
     res.redirect('/recipes')
   })
