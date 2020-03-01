@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/main.css">
+    <%- include('../partials/head.ejs') %>
     <title>Recipes | <%= recipe.name%></title>
   </head>
   <body>
+    <nav>
+      <%- include('../partials/nav.ejs') %>
+    </nav>
     <a href="/recipes">BACK TO ALL RECIPES</a>
     <div class="container">
       <div class="image">

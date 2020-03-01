@@ -1,0 +1,16 @@
+<a href="/recipes"><div class="index-link">My </br>Recipes</div></a>
+<div class="user-links">
+  <% if(currentUser) {%>
+  <h1>Welcome <%= currentUser.username%></h1>
+  <form class="logout"action="/sessions?_method=DELETE" method="POST">
+    <input type="submit" value="Log Out" />
+  </form>
+  <% } else { %>
+    <h1>Welcome</h1>
+    <ul>
+      <li><a class="user-buttons"href="/users/new">Sign Up</a></li>
+      <li><a class="user-buttons"href="/sessions/new">Log In</a></li>
+    </ul>
+
+  <%}%>
+</div>

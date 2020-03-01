@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <%- include('../partials/head.ejs') %>
     <title>Edit Recipe</title>
   </head>
   <body>
+    <nav>
+      <%- include('../partials/nav.ejs') %>
+    </nav>
     <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST">
       <!-- name -->
       <label for="name">NAME:</label><br/>
