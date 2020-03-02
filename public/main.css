@@ -13,6 +13,9 @@ body {
 }
 /* NAV BAR */
 nav {
+  border-top: 10px solid black;
+  border-right: 10px solid black;
+  border-left: 10px solid black;
   background-image: url('https://envato-shoebox-0.imgix.net/9224/81d8-0d33-4497-b2d7-98c733fdeea9/DSC_6985.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=700&s=16847fa97ddd5f56e7d15d63ef822091');
   background-repeat: no-repeat;
   background-size:cover;
@@ -24,7 +27,8 @@ nav {
 .index-link {
   font-size: 3em;
   font-family: 'kalam';
-  text-decoration: none;
+  text-decoration-line: none;
+  padding-left: 20px;
 
 }
 
@@ -55,6 +59,10 @@ nav {
   padding-top: 35px;
 
 }
+.user-buttons {
+  display: flex;
+  flex-direction: row;
+}
 /* INDEX PAGE */
 .add-new {
   display:block;
@@ -66,6 +74,7 @@ nav {
 }
 .cards-container {
   padding-top: 30px;
+  border: 10px solid black;
   display:flex;
   flex-direction: row;
   justify-content: space-around;
@@ -156,4 +165,32 @@ nav {
 p {
   margin-left: 10px;
   color: white;
+}
+/* FORMS PAGES */
+.forms-page {
+  margin: 10px;
+  height: 80vh;
+  background-image: url('https://image.freepik.com/foto-gratis/fondo-alimentos-ingredientes-pasta_1220-3286.jpg');
+  background-repeat: none;
+  background-size: cover;
+
+}
+.form {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+/* Sign up / log in */
+.sign-up {
+  border: 10px solid black;
+  height: 80vh;
+  background-image: url('https://us.123rf.com/450wm/milkos/milkos2002/milkos200201665/139944242-cooking-food-happy-chef-guy-holding-plate-smelling-invisible-dish-posing-over-gray-background-studio.jpg?ver=6');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.log-in {
+  border: 10px solid black;
+  height: 80vh;
+  background-image: url('https://media.istockphoto.com/photos/portrait-of-cheerful-joyful-chef-cook-in-beret-and-white-outfit-with-picture-id970514046?k=6&m=970514046&s=612x612&w=0&h=HHL5VlSRKdkHd_l8GMS5Eo9lZr9RpvaskQdH_gSY2O0=');
+  background-repeat: no-repeat;
+  background-size: cover;
 }

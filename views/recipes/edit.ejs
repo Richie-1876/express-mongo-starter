@@ -8,25 +8,28 @@
     <nav>
       <%- include('../partials/nav.ejs') %>
     </nav>
-    <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST">
-      <!-- name -->
-      <label for="name">NAME:</label><br/>
-      <input type="text" name="name" value="<%=recipe.name%>"><br/>
-      <!-- ingredients -->
-      <label for="ingredients">INGREDIENTS:</label><br/>
-      <textarea name="ingredients" rows="8" cols="80" ><%=recipe.ingredients%></textarea><br/>
-      <!-- instructions -->
-      <label for="instructions">INSTRUCTIONS:</label><br/>
-      <textarea name="instructions" rows="8" cols="80"
+    <div class="forms-page">
+      <form class="form"action="/recipes/<%=recipe.id%>?_method=PUT" method="POST">
+        <!-- name -->
+        <label for="name">NAME:</label><br/>
+        <input type="text" name="name" value="<%=recipe.name%>"><br/>
+        <!-- ingredients -->
+        <label for="ingredients">INGREDIENTS:</label><br/>
+        <textarea name="ingredients" rows="8" cols="80" ><%=recipe.ingredients%></textarea><br/>
+        <!-- instructions -->
+        <label for="instructions">INSTRUCTIONS:</label><br/>
+        <textarea name="instructions" rows="8" cols="80"
 
-       ><%=recipe.instructions.join('+')%></textarea><br/>
-      <!-- img -->
-      <label for="img">IMAGE URL:</label><br/>
-      <input type="text" name="img"value="<%=recipe.img%>"><br/>
-      <!-- serves -->
-      <label for="servings"></label>SERVINGS:<br/>
-      <input type="number" name="servings" value="<%=recipe.servings%>"><br/>
-      <input type="submit" name="" value="Edit Recipe">
-    </form>
+         ><%=recipe.instructions.join('+')%></textarea><br/>
+        <!-- img -->
+        <label for="img">IMAGE URL:</label><br/>
+        <input type="text" name="img"value="<%=recipe.img%>"><br/>
+        <!-- serves -->
+        <label for="servings"></label>SERVINGS:<br/>
+        <input type="number" name="servings" value="<%=recipe.servings%>"><br/>
+        <input type="submit" name="" value="Edit Recipe">
+      </form>
+    </div>
+
   </body>
 </html>
