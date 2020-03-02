@@ -1,6 +1,7 @@
-* {
+/* * {
   border: 1px solid gold;
-}
+} */
+
 .container {
   display:flex;
   flex-direction: row;
@@ -8,10 +9,13 @@
 }
 body {
   margin: 0;
+  background-color: black;
 }
 /* NAV BAR */
 nav {
-  background-color: grey;
+  background-image: url('https://envato-shoebox-0.imgix.net/9224/81d8-0d33-4497-b2d7-98c733fdeea9/DSC_6985.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=700&s=16847fa97ddd5f56e7d15d63ef822091');
+  background-repeat: no-repeat;
+  background-size:cover;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -19,6 +23,8 @@ nav {
 }
 .index-link {
   font-size: 3em;
+  font-family: 'kalam';
+  text-decoration: none;
 
 }
 
@@ -50,22 +56,104 @@ nav {
 
 }
 /* INDEX PAGE */
+.add-new {
+  display:block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2em;
+  color: white;
+
+}
 .cards-container {
+  padding-top: 30px;
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
-  height: 80vh;
+  min-height: 80vh;
+  background-image: url('https://images.pexels.com/photos/616484/pexels-photo-616484.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  background-repeat: repeat;
+  background-size: cover;
 }
 
 .index-card {
-  flex: 0 1 24%
-  background-color: blue;
+  display: inline-flex;
+  flex-direction: column;
+  flex: 0 0 24%;
+
+  max-height: 300px;
+  max-width: 250px;
+  margin-top: 30px;
 }
 .index-card, img {
   height: 100%;
   width: 100%;
+  border: 2px solid black;
+  box-shadow: 2px 5px black;
+  background-image: url('https://envato-shoebox-0.imgix.net/9224/81d8-0d33-4497-b2d7-98c733fdeea9/DSC_6985.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=700&s=16847fa97ddd5f56e7d15d63ef822091');
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 .index-card, h2 {
   text-align: center;
+
+  padding: 10px;
+  margin:0;
+}
+/* BUTTONS ON INDEX CARDS */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.edit {
+  font-size: 2em;
+  text-decoration: none;
+  background-color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.delete {
+  font-size: 1.5em;
+  border-radius: 10px;
+
+  width: 100px;
+  height: 40px;
+  background-color: red;
+  margin-bottom: 10px;
+}
+/* show page */
+.show-image {
+  width: 60vw;
+  background-color: white;
+  border: 2px solid black;
+  margin: 10px;
+}
+.ingredients {
+ background-color: white;
+ font-family: 'kalam';
+ display: flex;
+ flex-direction: column;
+ width: 35vw;
+ border: 2px solid black;
+ margin: 10px;
+ overflow-y: scroll;
+}
+.ingredients, ul {
+  display: block;
+  padding-left: 20px;
+}
+.instructions {
+  background-color: white;
+  font-family: 'kalam';
+  margin: 10px;
+  padding: 20px;
+}
+p {
+  margin-left: 10px;
+  color: white;
 }

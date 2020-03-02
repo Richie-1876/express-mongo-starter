@@ -8,9 +8,9 @@
     <nav>
       <%- include('../partials/nav.ejs') %>
     </nav>
-    <a href="/recipes">BACK TO ALL RECIPES</a>
+
     <div class="container">
-      <div class="image">
+      <div class="show-image">
         <img src="<%= recipe.img%>" alt="food image">
       </div>
       <div class="ingredients">
@@ -28,6 +28,7 @@
         <ol>
           <% for (let i = 0; i < recipe.instructions.length; i++) {%>
             <li><%=recipe.instructions[i]%></li>
+            <hr>
 
 
           <%}%>

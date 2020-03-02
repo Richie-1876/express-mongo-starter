@@ -65,7 +65,7 @@ app.use('/users', userController)
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.render('welcome.ejs');
+  res.redirect('/recipes');
 });
 
 //___________________
