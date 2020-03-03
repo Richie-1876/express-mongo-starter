@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <%- include('../partials/head.ejs') %>
+
+    <script type="text/javascript" src="/main.js/copy.js"></script>
     <title>Recipes | <%= recipe.name%></title>
   </head>
   <body>
@@ -13,14 +15,16 @@
       <div class="show-image">
         <img src="<%= recipe.img%>" alt="food image">
       </div>
-      <div class="ingredients">
+      <div class="ingredients" >
         <h2>Ingredients</h2>
-        <ul>
+        <ul id="ingredients-list">
           <% for (let i = 0; i < recipe.ingredients.length; i++) {%>
-            <li><%=recipe.ingredients[i]%></li>
+            <li class="list-item"><%=recipe.ingredients[i]%></li>
           <%}%>
         </ul>
+        <button type="button" onclick="copy();"id="copy-button">Copy Ingredients</button>
       </div>
+
     </div>
     <p>SERVES: <%= recipe.servings%></p>
       <div class="instructions">
@@ -35,7 +39,6 @@
         </ol>
 
       </div>
-
 
   </body>
 </html>
