@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 
 // model
 
+
 const recipeSchema = new mongoose.Schema({
   name: {type: String, required: true},
   ingredients: [{type: String}],
