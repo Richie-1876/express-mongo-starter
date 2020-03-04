@@ -20,6 +20,7 @@
         <ul id="ingredients-list">
           <% for (let i = 0; i < recipe.ingredients.length; i++) {%>
             <li class="list-item"><%=recipe.ingredients[i]%></li>
+            <hr/>
           <%}%>
         </ul>
         <button type="button" onclick="copy();"id="copy-button">Copy Ingredients</button>

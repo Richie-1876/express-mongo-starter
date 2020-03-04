@@ -155,6 +155,7 @@ nav {
 .ingredients, ul {
   display: block;
   padding-left: 20px;
+  padding-right: 20px;
 }
 .instructions {
   background-color: white;
