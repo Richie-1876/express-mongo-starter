@@ -173,6 +173,11 @@ p {
   margin-left: 10px;
   color: white;
 }
+#copy-button {
+  color: white;
+  background-color: black;
+  margin-right: 10px;
+}
 /* FORMS PAGES */
 .forms-page {
   margin: 10px;
